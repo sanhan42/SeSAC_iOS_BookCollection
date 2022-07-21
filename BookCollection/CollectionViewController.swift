@@ -37,7 +37,25 @@ class CollectionViewController: UICollectionViewController {
         cell.cellTitleLabel.textColor = .white
         cell.cellTitleLabel.text = list[indexPath.row].title
         
-        
         return cell
+    }
+    
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+    
+    @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
+        
+        let nav = vc.navigationController ?? UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

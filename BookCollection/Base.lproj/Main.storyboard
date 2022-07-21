@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KPV-GK-VJJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SVA-mJ-tFv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,13 +65,110 @@
                             <outlet property="delegate" destination="KPV-GK-VJJ" id="WDw-JN-f2T"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="OIM-dl-8c2">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="5va-QI-MOp">
+                            <connections>
+                                <action selector="searchButtonClicked:" destination="KPV-GK-VJJ" id="Hg7-B8-giT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQs-yj-XjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718.84057971014499" y="48.883928571428569"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="g2D-J8-kgY">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="VqO-Sg-Lh9" customClass="SearchViewController" customModule="BookCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8H2-sl-s4m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJr-1e-zDU">
+                                <rect key="frame" x="139.5" y="419" width="135" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wg8-fS-IYA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lJr-1e-zDU" firstAttribute="centerX" secondItem="8H2-sl-s4m" secondAttribute="centerX" id="JfQ-ou-TfY"/>
+                            <constraint firstItem="lJr-1e-zDU" firstAttribute="centerY" secondItem="8H2-sl-s4m" secondAttribute="centerY" id="t7z-EY-WjG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWI-Wr-QZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8115942028987" y="48.883928571428569"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="GGV-Ym-Nh5">
+            <objects>
+                <viewController storyboardIdentifier="detailViewController" id="oS6-xl-prv" customClass="DetailViewController" customModule="BookCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edc-xe-YNY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2j-jZ-FIa">
+                                <rect key="frame" x="178" y="771" width="58" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="More"/>
+                                <connections>
+                                    <action selector="moreButtonClicked:" destination="oS6-xl-prv" eventType="touchUpInside" id="O20-iO-gND"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Uf-gm-xN0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Uf-gm-xN0" firstAttribute="bottom" secondItem="w2j-jZ-FIa" secondAttribute="bottom" constant="60" id="SX6-g6-uJ0"/>
+                            <constraint firstItem="w2j-jZ-FIa" firstAttribute="centerX" secondItem="5Uf-gm-xN0" secondAttribute="centerX" id="yMj-uK-UOt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDY-Dm-5Tc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8115942028987" y="726.5625"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="q1D-jn-BI7">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="MxL-1C-UT8" customClass="WebViewController" customModule="BookCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vtX-VE-0ct">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="P3X-hg-Aiw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHg-ec-Cal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2329" y="727"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l0i-2y-5NF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SVA-mJ-tFv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qFO-rg-qin">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KPV-GK-VJJ" kind="relationship" relationship="rootViewController" id="1ev-Na-RaJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6h-aB-2An" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-191.30434782608697" y="48.883928571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
